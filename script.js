@@ -31,22 +31,28 @@ let gridSize = 16;
 console.log(container);
 makeGrid(gridSize);
 
+const button = document.getElementById("gridChange");
+button.addEventListener("click", function(){
+    gridSize = prompt("Set the size of the grid", `${gridSize}`);
+    makeGrid(gridSize);
+})
+
 
 
 function makeGrid(gridSize) {
-    if(gridSize > 1000)
-        gridSize = 1000;
+    if(gridSize > 100)
+        gridSize = 100;
 
     //Remove all old elements
     const oldDiv = document.querySelectorAll("div.pixel");
-    oldDiv.forEach((e) => e.remove);
+    oldDiv.forEach((e) => e.remove());
 
 
     let divSize = (Math.min(getWidth(), getHeight()) * .9) / gridSize;
 
     for(let i = 0; i < gridSize ** 2; i++){
         const element = document.createElement("div");
-        element.id = "pixel";
+        element.classList.add("pixel");
         container.appendChild(element);
         element.addEventListener("mouseover", function() {
             element.classList.add("currentlyHovered");

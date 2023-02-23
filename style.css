@@ -1,8 +1,12 @@
 body{
     background-color: dodgerblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-#pixel{
+div.pixel{
     box-sizing: border-box;
     background-color: lightblue;
     border-style: solid;
@@ -11,7 +15,7 @@ body{
     
 }
 
-#pixel.currentlyHovered{
+div.pixel.currentlyHovered{
     background-color: rgb(0, 77, 171);
 }
 
